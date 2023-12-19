@@ -23,7 +23,7 @@ Si sur windows vous ne pouvez exécuter le script en .ps1, ouvrer un powershelle
 
 Installer les paquets
 
-> pip install -r requirements.txt
+> pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-profiling pylint sqlalchemy pydantic
 
 ## Démarrer l'application
 
