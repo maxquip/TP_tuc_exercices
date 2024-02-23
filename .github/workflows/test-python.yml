@@ -20,5 +20,12 @@ jobs:
       - name: Install requirements
         run: |
           python -m pip install -r requirements.txt
-  
-
+      - name: Pylint
+        run: |
+           pylint --exit-zero application/
+      - name: Coverage
+        run: |
+            coverage run -m pytest --profile ./
+      - name: locust
+        run: | 
+           & locust -f tests/locustfile.py
