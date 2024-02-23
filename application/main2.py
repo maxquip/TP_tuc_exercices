@@ -1,15 +1,25 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+import time
+import random
 
-options = Options()
-options.add_argument('--headless')
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
+driver.get("https://wikiroulette.co/")
+wiki="https://wikiroulette.co/"
 
-driver.get("https://www.reddit.com/")
+def titre(url):
+  driver.get(url)
+  driver.set_window_size(1900,1200)
+  titre = driver.title
+  print("le titre du site est :"+titre)
 
-driver.implicitly_wait(5)
+def titrearticle(url):
+  driver.get(url)
+  article= driver.find_elements(by=By.CSS_SELECTOR, value="mw-page-title-main")
+  print("le titre de l'article est :"+article)
 
-print(driver.title)
-  
-
+time.sleep(5)
 driver.close()
+
+titre(wiki)
+titrearticle(wiki)
