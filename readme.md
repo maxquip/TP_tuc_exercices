@@ -1,5 +1,8 @@
 # README
 
+By Maxence Locmant, Thibaut Ringeval, Meline Godefroy
+
+
 ## Préparer son environnement
 
 Installer le paquet virtualenv
